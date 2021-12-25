@@ -3,29 +3,29 @@ Motor_Driver.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         0000028c  00000000  00000000  00000054  2**1
+  0 .text         000002aa  00000000  00000000  00000054  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  000002e0  2**0
+  1 .data         00000000  00800060  00800060  000002fe  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  000002e0  2**0
+  2 .comment      00000030  00000000  00000000  000002fe  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000310  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000330  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000068  00000000  00000000  0000034c  2**0
+  4 .debug_aranges 00000068  00000000  00000000  0000036c  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   0000088a  00000000  00000000  000003b4  2**0
+  5 .debug_info   000008e1  00000000  00000000  000003d4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 0000066a  00000000  00000000  00000c3e  2**0
+  6 .debug_abbrev 0000066a  00000000  00000000  00000cb5  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   0000047e  00000000  00000000  000012a8  2**0
+  7 .debug_line   00000498  00000000  00000000  0000131f  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000098  00000000  00000000  00001728  2**2
+  8 .debug_frame  00000098  00000000  00000000  000017b8  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    0000041a  00000000  00000000  000017c0  2**0
+  9 .debug_str    0000041a  00000000  00000000  00001850  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00000438  00000000  00000000  00001bda  2**0
+ 10 .debug_loc    00000438  00000000  00000000  00001c6a  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000048  00000000  00000000  00002012  2**0
+ 11 .debug_ranges 00000048  00000000  00000000  000020a2  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -61,7 +61,7 @@ Disassembly of section .text:
   5c:	de bf       	out	0x3e, r29	; 62
   5e:	cd bf       	out	0x3d, r28	; 61
   60:	0e 94 22 01 	call	0x244	; 0x244 <main>
-  64:	0c 94 44 01 	jmp	0x288	; 0x288 <_exit>
+  64:	0c 94 53 01 	jmp	0x2a6	; 0x2a6 <_exit>
 
 00000068 <__bad_interrupt>:
   68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
@@ -360,53 +360,68 @@ void		DIO_voidSetPinValue(u8 PortID ,u8 PinID ,u8 Value )
 
 int main(void)
 {
-    DIO_voidSetPinDirection(PORTA,PIN3,OUTPUT);
+    DIO_voidSetPinDirection(PORTA,PIN0,OUTPUT);
  244:	41 e0       	ldi	r20, 0x01	; 1
- 246:	63 e0       	ldi	r22, 0x03	; 3
+ 246:	60 e0       	ldi	r22, 0x00	; 0
  248:	80 e0       	ldi	r24, 0x00	; 0
  24a:	0e 94 36 00 	call	0x6c	; 0x6c <DIO_voidSetPinDirection>
+	DIO_voidSetPinDirection(PORTA,PIN1,OUTPUT);
+ 24e:	41 e0       	ldi	r20, 0x01	; 1
+ 250:	61 e0       	ldi	r22, 0x01	; 1
+ 252:	80 e0       	ldi	r24, 0x00	; 0
+ 254:	0e 94 36 00 	call	0x6c	; 0x6c <DIO_voidSetPinDirection>
 	
     while (1) 
     {
-		DIO_voidSetPinValue(PORTA,PIN3,HIGH);
- 24e:	41 e0       	ldi	r20, 0x01	; 1
- 250:	63 e0       	ldi	r22, 0x03	; 3
- 252:	80 e0       	ldi	r24, 0x00	; 0
- 254:	0e 94 ac 00 	call	0x158	; 0x158 <DIO_voidSetPinValue>
+		DIO_voidSetPinValue(PORTA,PIN0,HIGH);
+ 258:	41 e0       	ldi	r20, 0x01	; 1
+ 25a:	60 e0       	ldi	r22, 0x00	; 0
+ 25c:	80 e0       	ldi	r24, 0x00	; 0
+ 25e:	0e 94 ac 00 	call	0x158	; 0x158 <DIO_voidSetPinValue>
+		DIO_voidSetPinValue(PORTA,PIN1,LOW);
+ 262:	40 e0       	ldi	r20, 0x00	; 0
+ 264:	61 e0       	ldi	r22, 0x01	; 1
+ 266:	80 e0       	ldi	r24, 0x00	; 0
+ 268:	0e 94 ac 00 	call	0x158	; 0x158 <DIO_voidSetPinValue>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 258:	2f ef       	ldi	r18, 0xFF	; 255
- 25a:	81 ee       	ldi	r24, 0xE1	; 225
- 25c:	94 e0       	ldi	r25, 0x04	; 4
- 25e:	21 50       	subi	r18, 0x01	; 1
- 260:	80 40       	sbci	r24, 0x00	; 0
- 262:	90 40       	sbci	r25, 0x00	; 0
- 264:	e1 f7       	brne	.-8      	; 0x25e <main+0x1a>
- 266:	00 c0       	rjmp	.+0      	; 0x268 <main+0x24>
- 268:	00 00       	nop
+ 26c:	2f ef       	ldi	r18, 0xFF	; 255
+ 26e:	81 ee       	ldi	r24, 0xE1	; 225
+ 270:	94 e0       	ldi	r25, 0x04	; 4
+ 272:	21 50       	subi	r18, 0x01	; 1
+ 274:	80 40       	sbci	r24, 0x00	; 0
+ 276:	90 40       	sbci	r25, 0x00	; 0
+ 278:	e1 f7       	brne	.-8      	; 0x272 <main+0x2e>
+ 27a:	00 c0       	rjmp	.+0      	; 0x27c <main+0x38>
+ 27c:	00 00       	nop
 		_delay_ms(100);
-		DIO_voidSetPinValue(PORTA,PIN3,LOW);
- 26a:	40 e0       	ldi	r20, 0x00	; 0
- 26c:	63 e0       	ldi	r22, 0x03	; 3
- 26e:	80 e0       	ldi	r24, 0x00	; 0
- 270:	0e 94 ac 00 	call	0x158	; 0x158 <DIO_voidSetPinValue>
- 274:	2f ef       	ldi	r18, 0xFF	; 255
- 276:	81 ee       	ldi	r24, 0xE1	; 225
- 278:	94 e0       	ldi	r25, 0x04	; 4
- 27a:	21 50       	subi	r18, 0x01	; 1
- 27c:	80 40       	sbci	r24, 0x00	; 0
- 27e:	90 40       	sbci	r25, 0x00	; 0
- 280:	e1 f7       	brne	.-8      	; 0x27a <main+0x36>
- 282:	00 c0       	rjmp	.+0      	; 0x284 <main+0x40>
- 284:	00 00       	nop
- 286:	e3 cf       	rjmp	.-58     	; 0x24e <main+0xa>
+		DIO_voidSetPinValue(PORTA,PIN0,LOW);
+ 27e:	40 e0       	ldi	r20, 0x00	; 0
+ 280:	60 e0       	ldi	r22, 0x00	; 0
+ 282:	80 e0       	ldi	r24, 0x00	; 0
+ 284:	0e 94 ac 00 	call	0x158	; 0x158 <DIO_voidSetPinValue>
+		DIO_voidSetPinValue(PORTA,PIN1,HIGH);
+ 288:	41 e0       	ldi	r20, 0x01	; 1
+ 28a:	61 e0       	ldi	r22, 0x01	; 1
+ 28c:	80 e0       	ldi	r24, 0x00	; 0
+ 28e:	0e 94 ac 00 	call	0x158	; 0x158 <DIO_voidSetPinValue>
+ 292:	2f ef       	ldi	r18, 0xFF	; 255
+ 294:	81 ee       	ldi	r24, 0xE1	; 225
+ 296:	94 e0       	ldi	r25, 0x04	; 4
+ 298:	21 50       	subi	r18, 0x01	; 1
+ 29a:	80 40       	sbci	r24, 0x00	; 0
+ 29c:	90 40       	sbci	r25, 0x00	; 0
+ 29e:	e1 f7       	brne	.-8      	; 0x298 <main+0x54>
+ 2a0:	00 c0       	rjmp	.+0      	; 0x2a2 <main+0x5e>
+ 2a2:	00 00       	nop
+ 2a4:	d9 cf       	rjmp	.-78     	; 0x258 <main+0x14>
 
-00000288 <_exit>:
- 288:	f8 94       	cli
+000002a6 <_exit>:
+ 2a6:	f8 94       	cli
 
-0000028a <__stop_program>:
- 28a:	ff cf       	rjmp	.-2      	; 0x28a <__stop_program>
+000002a8 <__stop_program>:
+ 2a8:	ff cf       	rjmp	.-2      	; 0x2a8 <__stop_program>

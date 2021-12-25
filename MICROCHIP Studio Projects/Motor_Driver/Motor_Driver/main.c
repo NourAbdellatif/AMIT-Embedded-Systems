@@ -16,13 +16,16 @@
 
 int main(void)
 {
-    DIO_voidSetPinDirection(PORTA,PIN3,OUTPUT);
+    DIO_voidSetPinDirection(PORTA,PIN0,OUTPUT);
+	DIO_voidSetPinDirection(PORTA,PIN1,OUTPUT);
 	
     while (1) 
     {
-		DIO_voidSetPinValue(PORTA,PIN3,HIGH);
+		DIO_voidSetPinValue(PORTA,PIN0,HIGH);
+		DIO_voidSetPinValue(PORTA,PIN1,LOW);
 		_delay_ms(100);
-		DIO_voidSetPinValue(PORTA,PIN3,LOW);
+		DIO_voidSetPinValue(PORTA,PIN0,LOW);
+		DIO_voidSetPinValue(PORTA,PIN1,HIGH);
 		_delay_ms(100);
     }
 }

@@ -164,7 +164,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x28c
+.text           0x00000000      0x2aa
  *(.vectors)
  .vectors       0x00000000       0x54 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -248,13 +248,13 @@ END GROUP
  .text.DIO_voidSetPinValue
                 0x00000158       0xec DIO_program.o
                 0x00000158                DIO_voidSetPinValue
- .text.main     0x00000244       0x44 main.o
+ .text.main     0x00000244       0x62 main.o
                 0x00000244                main
-                0x00000288                . = ALIGN (0x2)
+                0x000002a6                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000288        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000288                _exit
-                0x00000288                exit
+ .fini9         0x000002a6        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x000002a6                _exit
+                0x000002a6                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -273,11 +273,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000288        0x4 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x000002a6        0x4 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x0000028c                _etext = .
+                0x000002aa                _etext = .
 
-.data           0x00800060        0x0 load address 0x0000028c
+.data           0x00800060        0x0 load address 0x000002aa
                 [!provide]                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -295,8 +295,8 @@ END GROUP
  *(.bss*)
  *(COMMON)
                 [!provide]                PROVIDE (__bss_end, .)
-                0x0000028c                __data_load_start = LOADADDR (.data)
-                0x0000028c                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000002aa                __data_load_start = LOADADDR (.data)
+                0x000002aa                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800060        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -378,11 +378,11 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0x88a
+.debug_info     0x00000000      0x8e1
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_info    0x000004e6      0x1e1 DIO_program.o
- .debug_info    0x000006c7      0x1c3 main.o
+ .debug_info    0x000006c7      0x21a main.o
 
 .debug_abbrev   0x00000000      0x66a
  *(.debug_abbrev)
@@ -390,11 +390,11 @@ END GROUP
  .debug_abbrev  0x000004a3       0xb6 DIO_program.o
  .debug_abbrev  0x00000559      0x111 main.o
 
-.debug_line     0x00000000      0x47e
+.debug_line     0x00000000      0x498
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x116 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_line    0x00000116      0x22f DIO_program.o
- .debug_line    0x00000345      0x139 main.o
+ .debug_line    0x00000345      0x153 main.o
 
 .debug_frame    0x00000000       0x98
  *(.debug_frame)
