@@ -55,7 +55,6 @@ void	LCD_voidSendCMD8bit(u8 CMD){
 	_delay_ms(5);
 	
 }
-
 void	LCD_voidInit4bit(void){
 	_delay_ms(100);
 	LCD_voidSendCMD4bit(0x33);
@@ -88,7 +87,7 @@ void	LCD_voidWriteChar4bit(u8 Data)
 	_delay_ms(1);
 	/*	7-	Assign the LOW Nibble of Data without change in the low Nibble in PORT	*/
 	temp = ((Data << 4) | (DIO_u8GetPortValue(LCD_DATA_PORT) & 0x0F));
-	DIO_voidSetPortValue(LCD_DATA_PORT,temp);	
+	DIO_voidSetPortValue(LCD_DATA_PORT,temp);
 	/*	8-	En must be latched (EN = 0)						*/
 	DIO_voidSetPinValue(LCD_CONTROL_PORT,LCD_EN,LOW);
 	_delay_ms(1);
@@ -115,23 +114,39 @@ void	LCD_voidSendCMD4bit(u8 CMD)
 	_delay_ms(1);
 	/*	7-	Assign the LOW Nibble of Data without change in the low Nibble in PORT	*/
 	temp = ((CMD << 4) | (DIO_u8GetPortValue(LCD_DATA_PORT) & 0x0F));
-	DIO_voidSetPortValue(LCD_DATA_PORT,temp);	
+	DIO_voidSetPortValue(LCD_DATA_PORT,temp);
 	/*	8-	En must be latched (EN = 0)						*/
 	DIO_voidSetPinValue(LCD_CONTROL_PORT,LCD_EN,LOW);
 	_delay_ms(1);
 }
-u8		DIO_u8GetPortValue(u8 PortID)
+// Warning avoid (u8*) ""
+void	LCD_voidWriteString(u8 * string)
 {
 	u8 Local_u8Val = 0;
-	if(PortID<4)
+	while(string[Local_u8Val] != '\0'){
+		switch(LCD_MODE){
+			case 4:	LCD_voidWriteChar4bit(string[Local_u8Val]);break;
+			case 8: LCD_voidWriteChar8bit(string[Local_u8Val]);break;
+		}
+		_delay_ms(100);
+		Local_u8Val++;
+	}
+	
+}
+
+void	LCD_voidGotoXY(u8 Line, u8 Col){
+	if(Line==0)
 	{
-		switch(PortID)
-		{
-			case PORTA	:	Local_u8Val	=	PORTA_REG;	break;
-			case PORTB	:	Local_u8Val	=	PORTB_REG;	break;			
-			case PORTC	:	Local_u8Val	=	PORTC_REG;	break;
-			case PORTD	:	Local_u8Val	=	PORTD_REG;	break;
+		switch(LCD_MODE){
+			case 4:	LCD_voidSendCMD4bit((0x80+Col));break;
+			case 8: LCD_voidSendCMD8bit((0x80+Col));break;
 		}
 	}
-	return Local_u8Val
+	else if(Line==1){
+		switch(LCD_MODE){
+			case 4:	LCD_voidSendCMD4bit((0xC0+Col));break;
+			case 8: LCD_voidSendCMD8bit((0xC0+Col));break;
+		}
+	}
+
 }
