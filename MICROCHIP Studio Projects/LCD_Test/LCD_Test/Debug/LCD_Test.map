@@ -30,6 +30,10 @@ Discarded input sections
                 0x00000000       0x3e LCD_program.o
  .text.LCD_voidGotoXY
                 0x00000000       0x1c LCD_program.o
+ .text.LCD_voidWriteNumber
+                0x00000000       0x64 LCD_program.o
+ .text.LCD_voidWriteCustomChar
+                0x00000000       0x32 LCD_program.o
  .text          0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .data          0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
@@ -417,60 +421,60 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0xc0
+.debug_aranges  0x00000000       0xd0
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x48 DIO_program.o
  .debug_aranges
                 0x00000048       0x20 LCD_main.o
  .debug_aranges
-                0x00000068       0x58 LCD_program.o
+                0x00000068       0x68 LCD_program.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x137f
+.debug_info     0x00000000     0x148a
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_info    0x000004e6      0x1e1 DIO_program.o
  .debug_info    0x000006c7      0x24f LCD_main.o
- .debug_info    0x00000916      0xa69 LCD_program.o
+ .debug_info    0x00000916      0xb74 LCD_program.o
 
-.debug_abbrev   0x00000000      0x7ce
+.debug_abbrev   0x00000000      0x7dd
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x4a3 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_abbrev  0x000004a3       0xb6 DIO_program.o
  .debug_abbrev  0x00000559      0x11c LCD_main.o
- .debug_abbrev  0x00000675      0x159 LCD_program.o
+ .debug_abbrev  0x00000675      0x168 LCD_program.o
 
-.debug_line     0x00000000      0x857
+.debug_line     0x00000000      0x8c1
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x116 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_line    0x00000116      0x22f DIO_program.o
  .debug_line    0x00000345      0x166 LCD_main.o
- .debug_line    0x000004ab      0x3ac LCD_program.o
+ .debug_line    0x000004ab      0x416 LCD_program.o
 
-.debug_frame    0x00000000      0x164
+.debug_frame    0x00000000      0x1a4
  *(.debug_frame)
  .debug_frame   0x00000000       0x74 DIO_program.o
  .debug_frame   0x00000074       0x24 LCD_main.o
- .debug_frame   0x00000098       0xcc LCD_program.o
+ .debug_frame   0x00000098      0x10c LCD_program.o
 
-.debug_str      0x00000000      0x4bd
+.debug_str      0x00000000      0x5a3
  *(.debug_str)
  .debug_str     0x00000000      0x196 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_str     0x00000196      0x1e7 DIO_program.o
                                 0x210 (size before relaxing)
- .debug_str     0x0000037d       0xb7 LCD_main.o
-                                0x24a (size before relaxing)
- .debug_str     0x00000434       0x89 LCD_program.o
-                                0x2d5 (size before relaxing)
+ .debug_str     0x0000037d      0x11d LCD_main.o
+                                0x265 (size before relaxing)
+ .debug_str     0x0000049a      0x109 LCD_program.o
+                                0x377 (size before relaxing)
 
-.debug_loc      0x00000000      0xbdd
+.debug_loc      0x00000000      0xcf8
  *(.debug_loc)
  .debug_loc     0x00000000      0x3f0 DIO_program.o
  .debug_loc     0x000003f0       0x48 LCD_main.o
- .debug_loc     0x00000438      0x7a5 LCD_program.o
+ .debug_loc     0x00000438      0x8c0 LCD_program.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -490,11 +494,11 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0x90
+.debug_ranges   0x00000000       0xa0
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x38 DIO_program.o
  .debug_ranges  0x00000038       0x10 LCD_main.o
- .debug_ranges  0x00000048       0x48 LCD_program.o
+ .debug_ranges  0x00000048       0x58 LCD_program.o
 
 .debug_macro
  *(.debug_macro)

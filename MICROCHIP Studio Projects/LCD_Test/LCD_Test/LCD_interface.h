@@ -16,7 +16,8 @@ void	LCD_voidSendCMD8bit(u8 CMD);
 void	LCD_voidInit4bit(void);
 void	LCD_voidWriteChar4bit(u8 Data);
 void	LCD_voidSendCMD4bit(u8 CMD);
-
+void	LCD_voidWriteNumber(u8 Number );
+void	LCD_voidWriteCustomChar(u8* HexArray);
 void	LCD_voidWriteString(u8 * string);
 void	LCD_voidGotoXY(u8 Line, u8 Col);
 

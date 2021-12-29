@@ -150,3 +150,39 @@ void	LCD_voidGotoXY(u8 Line, u8 Col){
 	}
 
 }
+void	LCD_voidWriteNumber(u8 Number){
+	if(LCD_MODE==4){
+		LCD_voidWriteChar4bit(((Number/100)%10)+0x30);
+		LCD_voidWriteChar4bit(((Number/10)%10)+0x30);
+		LCD_voidWriteChar4bit((Number%10)+0x30);
+	}
+	else if(LCD_MODE==8){
+		LCD_voidWriteChar8bit(((Number/100)%10)+0x30);
+		LCD_voidWriteChar8bit(((Number/10)%10)+0x30);
+		LCD_voidWriteChar8bit((Number%10)+0x30);
+	}
+	
+}
+void	LCD_voidWriteCustomChar(u8* HexArray){
+	u8 Local_u8Variable_Arraysize = 8;
+	u8 Local_u8Variable_Index = 0;
+	u8	Local_u8Variable_AddChar = 0x40;
+	if(LCD_MODE==4){
+		LCD_voidSendCMD4bit(Local_u8Variable_AddChar);
+		while(Local_u8Variable_Index<Local_u8Variable_Arraysize){
+			LCD_voidWriteChar4bit(HexArray[Local_u8Variable_Index]);
+			Local_u8Variable_Index++;
+		}
+		Local_u8Variable_AddChar+=8;
+		LCD_voidSendCMD4bit(0x80);
+	}
+	else if(LCD_MODE==8){
+		LCD_voidSendCMD8bit(Local_u8Variable_AddChar);
+		while(Local_u8Variable_Index<Local_u8Variable_Arraysize){
+			LCD_voidWriteChar8bit(HexArray[Local_u8Variable_Index]);
+			Local_u8Variable_Index++;
+		}
+		Local_u8Variable_AddChar+=8;
+		LCD_voidSendCMD8bit(0x80);
+	}
+}
