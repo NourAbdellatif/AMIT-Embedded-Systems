@@ -10,6 +10,10 @@ Discarded input sections
  .text          0x00000000        0x0 DIO_program.o
  .data          0x00000000        0x0 DIO_program.o
  .bss           0x00000000        0x0 DIO_program.o
+ .text.DIO_voidSetPinDirection
+                0x00000000       0xec DIO_program.o
+ .text.DIO_voidSetPinValue
+                0x00000000       0xec DIO_program.o
  .text.DIO_u8GetPinValue
                 0x00000000       0x6c DIO_program.o
  .text.DIO_voidSetPortDirection
@@ -18,42 +22,19 @@ Discarded input sections
                 0x00000000       0x24 DIO_program.o
  .text.DIO_u8GetPortValue
                 0x00000000       0x2c DIO_program.o
- .text          0x00000000        0x0 LCD_main.o
- .data          0x00000000        0x0 LCD_main.o
- .bss           0x00000000        0x0 LCD_main.o
- .text          0x00000000        0x0 LCD_program.o
- .data          0x00000000        0x0 LCD_program.o
- .bss           0x00000000        0x0 LCD_program.o
- .text.LCD_voidWriteChar8bit
-                0x00000000       0x50 LCD_program.o
- .text.LCD_voidSendCMD8bit
-                0x00000000       0x50 LCD_program.o
- .text.LCD_voidInit8bit
-                0x00000000       0x50 LCD_program.o
- .text.LCD_voidWriteChar4bit
-                0x00000000       0xa6 LCD_program.o
- .text.LCD_voidSendCMD4bit
-                0x00000000       0xa6 LCD_program.o
- .text.LCD_voidInit4bit
-                0x00000000       0x3e LCD_program.o
- .text.LCD_voidWriteString
-                0x00000000       0x38 LCD_program.o
- .text.LCD_voidGotoXY
-                0x00000000       0x1c LCD_program.o
- .text.LCD_voidWriteNumber
-                0x00000000       0x64 LCD_program.o
- .text.LCD_voidWriteCustomChar
-                0x00000000       0x32 LCD_program.o
- .debug_info    0x00000000      0xb74 LCD_program.o
- .debug_abbrev  0x00000000      0x168 LCD_program.o
- .debug_loc     0x00000000      0x8c0 LCD_program.o
+ .debug_info    0x00000000      0x1e1 DIO_program.o
+ .debug_abbrev  0x00000000       0xb6 DIO_program.o
+ .debug_loc     0x00000000      0x3f0 DIO_program.o
  .debug_aranges
-                0x00000000       0x68 LCD_program.o
- .debug_ranges  0x00000000       0x58 LCD_program.o
- .debug_line    0x00000000      0x416 LCD_program.o
- .debug_str     0x00000000      0x377 LCD_program.o
- .comment       0x00000000       0x31 LCD_program.o
- .debug_frame   0x00000000      0x10c LCD_program.o
+                0x00000000       0x48 DIO_program.o
+ .debug_ranges  0x00000000       0x38 DIO_program.o
+ .debug_line    0x00000000      0x22f DIO_program.o
+ .debug_str     0x00000000      0x22d DIO_program.o
+ .comment       0x00000000       0x31 DIO_program.o
+ .debug_frame   0x00000000       0x74 DIO_program.o
+ .text          0x00000000        0x0 not working.o
+ .data          0x00000000        0x0 not working.o
+ .bss           0x00000000        0x0 not working.o
  .text          0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .data          0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
@@ -87,8 +68,7 @@ Linker script and memory map
 
 LOAD E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
 LOAD DIO_program.o
-LOAD LCD_main.o
-LOAD LCD_program.o
+LOAD not working.o
 START GROUP
 LOAD e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
 END GROUP
@@ -198,7 +178,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x272
+.text           0x00000000      0x100
  *(.vectors)
  .vectors       0x00000000       0x54 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -253,7 +233,6 @@ END GROUP
  *(.init9)
  *(.text)
  .text          0x00000068        0x4 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
-                0x00000068                __vector_1
                 0x00000068                __vector_12
                 0x00000068                __bad_interrupt
                 0x00000068                __vector_6
@@ -276,19 +255,16 @@ END GROUP
                 0x00000068                __vector_20
                 0x0000006c                . = ALIGN (0x2)
  *(.text.*)
- .text.DIO_voidSetPinDirection
-                0x0000006c       0xec DIO_program.o
-                0x0000006c                DIO_voidSetPinDirection
- .text.DIO_voidSetPinValue
-                0x00000158       0xec DIO_program.o
-                0x00000158                DIO_voidSetPinValue
- .text.main     0x00000244       0x2a LCD_main.o
-                0x00000244                main
-                0x0000026e                . = ALIGN (0x2)
+ .text.main     0x0000006c       0x46 not working.o
+                0x0000006c                main
+ .text.__vector_1
+                0x000000b2       0x4a not working.o
+                0x000000b2                __vector_1
+                0x000000fc                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000026e        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x0000026e                _exit
-                0x0000026e                exit
+ .fini9         0x000000fc        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x000000fc                _exit
+                0x000000fc                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -307,11 +283,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000026e        0x4 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x000000fc        0x4 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000272                _etext = .
+                0x00000100                _etext = .
 
-.data           0x00800060        0x0 load address 0x00000272
+.data           0x00800060        0x0 load address 0x00000100
                 [!provide]                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -329,8 +305,8 @@ END GROUP
  *(.bss*)
  *(COMMON)
                 [!provide]                PROVIDE (__bss_end, .)
-                0x00000272                __data_load_start = LOADADDR (.data)
-                0x00000272                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000100                __data_load_start = LOADADDR (.data)
+                0x00000100                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800060        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
@@ -378,9 +354,8 @@ END GROUP
 
 .comment        0x00000000       0x30
  *(.comment)
- .comment       0x00000000       0x30 DIO_program.o
+ .comment       0x00000000       0x30 not working.o
                                  0x31 (size before relaxing)
- .comment       0x00000030       0x31 LCD_main.o
 
 .note.gnu.avr.deviceinfo
                 0x00000000       0x3c
@@ -402,50 +377,42 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0x68
+.debug_aranges  0x00000000       0x28
  *(.debug_aranges)
  .debug_aranges
-                0x00000000       0x48 DIO_program.o
- .debug_aranges
-                0x00000048       0x20 LCD_main.o
+                0x00000000       0x28 not working.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0x7ef
+.debug_info     0x00000000      0x6c8
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_info    0x000004e6      0x1e1 DIO_program.o
- .debug_info    0x000006c7      0x128 LCD_main.o
+ .debug_info    0x000004e6      0x1e2 not working.o
 
-.debug_abbrev   0x00000000      0x5da
+.debug_abbrev   0x00000000      0x5a5
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x4a3 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_abbrev  0x000004a3       0xb6 DIO_program.o
- .debug_abbrev  0x00000559       0x81 LCD_main.o
+ .debug_abbrev  0x000004a3      0x102 not working.o
 
-.debug_line     0x00000000      0x3ad
+.debug_line     0x00000000      0x28b
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x116 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_line    0x00000116      0x22f DIO_program.o
- .debug_line    0x00000345       0x68 LCD_main.o
+ .debug_line    0x00000116      0x175 not working.o
 
-.debug_frame    0x00000000       0x98
+.debug_frame    0x00000000       0x50
  *(.debug_frame)
- .debug_frame   0x00000000       0x74 DIO_program.o
- .debug_frame   0x00000074       0x24 LCD_main.o
+ .debug_frame   0x00000000       0x50 not working.o
 
-.debug_str      0x00000000      0x41d
+.debug_str      0x00000000      0x375
  *(.debug_str)
  .debug_str     0x00000000      0x196 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_str     0x00000196      0x1e7 DIO_program.o
-                                0x210 (size before relaxing)
- .debug_str     0x0000037d       0xa0 LCD_main.o
-                                0x1e3 (size before relaxing)
+ .debug_str     0x00000196      0x1df not working.o
+                                0x213 (size before relaxing)
 
-.debug_loc      0x00000000      0x3f0
+.debug_loc      0x00000000      0x12e
  *(.debug_loc)
- .debug_loc     0x00000000      0x3f0 DIO_program.o
+ .debug_loc     0x00000000      0x12e not working.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -465,12 +432,11 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0x48
+.debug_ranges   0x00000000       0x18
  *(.debug_ranges)
- .debug_ranges  0x00000000       0x38 DIO_program.o
- .debug_ranges  0x00000038       0x10 LCD_main.o
+ .debug_ranges  0x00000000       0x18 not working.o
 
 .debug_macro
  *(.debug_macro)
-OUTPUT(LCD_Test.elf elf32-avr)
+OUTPUT(Interrupt.elf elf32-avr)
 LOAD linker stubs

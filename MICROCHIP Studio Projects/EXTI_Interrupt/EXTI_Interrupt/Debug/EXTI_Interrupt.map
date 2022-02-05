@@ -2,6 +2,8 @@ Archive member included to satisfy reference by file (symbol)
 
 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
                               E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o (exit)
+e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+                              EXTI_program.o (__do_clear_bss)
 
 Discarded input sections
 
@@ -18,42 +20,19 @@ Discarded input sections
                 0x00000000       0x24 DIO_program.o
  .text.DIO_u8GetPortValue
                 0x00000000       0x2c DIO_program.o
- .text          0x00000000        0x0 LCD_main.o
- .data          0x00000000        0x0 LCD_main.o
- .bss           0x00000000        0x0 LCD_main.o
- .text          0x00000000        0x0 LCD_program.o
- .data          0x00000000        0x0 LCD_program.o
- .bss           0x00000000        0x0 LCD_program.o
- .text.LCD_voidWriteChar8bit
-                0x00000000       0x50 LCD_program.o
- .text.LCD_voidSendCMD8bit
-                0x00000000       0x50 LCD_program.o
- .text.LCD_voidInit8bit
-                0x00000000       0x50 LCD_program.o
- .text.LCD_voidWriteChar4bit
-                0x00000000       0xa6 LCD_program.o
- .text.LCD_voidSendCMD4bit
-                0x00000000       0xa6 LCD_program.o
- .text.LCD_voidInit4bit
-                0x00000000       0x3e LCD_program.o
- .text.LCD_voidWriteString
-                0x00000000       0x38 LCD_program.o
- .text.LCD_voidGotoXY
-                0x00000000       0x1c LCD_program.o
- .text.LCD_voidWriteNumber
-                0x00000000       0x64 LCD_program.o
- .text.LCD_voidWriteCustomChar
-                0x00000000       0x32 LCD_program.o
- .debug_info    0x00000000      0xb74 LCD_program.o
- .debug_abbrev  0x00000000      0x168 LCD_program.o
- .debug_loc     0x00000000      0x8c0 LCD_program.o
- .debug_aranges
-                0x00000000       0x68 LCD_program.o
- .debug_ranges  0x00000000       0x58 LCD_program.o
- .debug_line    0x00000000      0x416 LCD_program.o
- .debug_str     0x00000000      0x377 LCD_program.o
- .comment       0x00000000       0x31 LCD_program.o
- .debug_frame   0x00000000      0x10c LCD_program.o
+ .text          0x00000000        0x0 EXTI_main.o
+ .data          0x00000000        0x0 EXTI_main.o
+ .bss           0x00000000        0x0 EXTI_main.o
+ .text          0x00000000        0x0 EXTI_program.o
+ .data          0x00000000        0x0 EXTI_program.o
+ .bss           0x00000000        0x0 EXTI_program.o
+ .text.EXTI0_voidDisable
+                0x00000000        0x8 EXTI_program.o
+ .text          0x00000000        0x0 GIE_program.o
+ .data          0x00000000        0x0 GIE_program.o
+ .bss           0x00000000        0x0 GIE_program.o
+ .text.GIE_voidDisable
+                0x00000000        0x8 GIE_program.o
  .text          0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .data          0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .bss           0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
@@ -70,6 +49,22 @@ Discarded input sections
                 0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  .text.libgcc.fixed
                 0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .text          0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.mul
+                0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.fixed
+                0x00000000        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
 
 Memory Configuration
 
@@ -87,8 +82,9 @@ Linker script and memory map
 
 LOAD E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
 LOAD DIO_program.o
-LOAD LCD_main.o
-LOAD LCD_program.o
+LOAD EXTI_main.o
+LOAD EXTI_program.o
+LOAD GIE_program.o
 START GROUP
 LOAD e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libm.a
 END GROUP
@@ -198,7 +194,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x272
+.text           0x00000000      0x374
  *(.vectors)
  .vectors       0x00000000       0x54 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -239,6 +235,8 @@ END GROUP
  *(.init3)
  *(.init3)
  *(.init4)
+ .init4         0x00000060       0x10 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_clear_bss.o)
+                0x00000060                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -249,46 +247,63 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000060        0x8 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
+ .init9         0x00000070        0x8 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  *(.init9)
  *(.text)
- .text          0x00000068        0x4 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
-                0x00000068                __vector_1
-                0x00000068                __vector_12
-                0x00000068                __bad_interrupt
-                0x00000068                __vector_6
-                0x00000068                __vector_3
-                0x00000068                __vector_11
-                0x00000068                __vector_13
-                0x00000068                __vector_17
-                0x00000068                __vector_19
-                0x00000068                __vector_7
-                0x00000068                __vector_5
-                0x00000068                __vector_4
-                0x00000068                __vector_9
-                0x00000068                __vector_2
-                0x00000068                __vector_15
-                0x00000068                __vector_8
-                0x00000068                __vector_14
-                0x00000068                __vector_10
-                0x00000068                __vector_16
-                0x00000068                __vector_18
-                0x00000068                __vector_20
-                0x0000006c                . = ALIGN (0x2)
+ .text          0x00000078        0x4 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
+                0x00000078                __vector_12
+                0x00000078                __bad_interrupt
+                0x00000078                __vector_6
+                0x00000078                __vector_3
+                0x00000078                __vector_11
+                0x00000078                __vector_13
+                0x00000078                __vector_17
+                0x00000078                __vector_19
+                0x00000078                __vector_7
+                0x00000078                __vector_5
+                0x00000078                __vector_4
+                0x00000078                __vector_9
+                0x00000078                __vector_2
+                0x00000078                __vector_15
+                0x00000078                __vector_8
+                0x00000078                __vector_14
+                0x00000078                __vector_10
+                0x00000078                __vector_16
+                0x00000078                __vector_18
+                0x00000078                __vector_20
+                0x0000007c                . = ALIGN (0x2)
  *(.text.*)
  .text.DIO_voidSetPinDirection
-                0x0000006c       0xec DIO_program.o
-                0x0000006c                DIO_voidSetPinDirection
+                0x0000007c       0xec DIO_program.o
+                0x0000007c                DIO_voidSetPinDirection
  .text.DIO_voidSetPinValue
-                0x00000158       0xec DIO_program.o
-                0x00000158                DIO_voidSetPinValue
- .text.main     0x00000244       0x2a LCD_main.o
-                0x00000244                main
-                0x0000026e                . = ALIGN (0x2)
+                0x00000168       0xec DIO_program.o
+                0x00000168                DIO_voidSetPinValue
+ .text.EXTI_app
+                0x00000254       0x3a EXTI_main.o
+                0x00000254                EXTI_app
+ .text.main     0x0000028e       0x6c EXTI_main.o
+                0x0000028e                main
+ .text.EXTI0_voidInit
+                0x000002fa        0xe EXTI_program.o
+                0x000002fa                EXTI0_voidInit
+ .text.EXTI0_voidEnable
+                0x00000308        0x8 EXTI_program.o
+                0x00000308                EXTI0_voidEnable
+ .text.EXTI0_voidSetCallBack
+                0x00000310        0xa EXTI_program.o
+                0x00000310                EXTI0_voidSetCallBack
+ .text.__vector_1
+                0x0000031a       0x4e EXTI_program.o
+                0x0000031a                __vector_1
+ .text.GIE_voidEnable
+                0x00000368        0x8 GIE_program.o
+                0x00000368                GIE_voidEnable
+                0x00000370                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000026e        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x0000026e                _exit
-                0x0000026e                exit
+ .fini9         0x00000370        0x0 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000370                _exit
+                0x00000370                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -307,11 +322,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000026e        0x4 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000370        0x4 e:/programs/microchip/main/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000272                _etext = .
+                0x00000374                _etext = .
 
-.data           0x00800060        0x0 load address 0x00000272
+.data           0x00800060        0x0 load address 0x00000374
                 [!provide]                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -323,20 +338,22 @@ END GROUP
                 0x00800060                _edata = .
                 [!provide]                PROVIDE (__data_end, .)
 
-.bss            0x00800060        0x0
-                [!provide]                PROVIDE (__bss_start, .)
+.bss            0x00800060        0x2
+                0x00800060                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
+ .bss.EXTI0_CallBack
+                0x00800060        0x2 EXTI_program.o
  *(COMMON)
-                [!provide]                PROVIDE (__bss_end, .)
-                0x00000272                __data_load_start = LOADADDR (.data)
-                0x00000272                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00800062                PROVIDE (__bss_end, .)
+                0x00000374                __data_load_start = LOADADDR (.data)
+                0x00000374                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800060        0x0
+.noinit         0x00800062        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800060                _end = .
+                0x00800062                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -380,7 +397,9 @@ END GROUP
  *(.comment)
  .comment       0x00000000       0x30 DIO_program.o
                                  0x31 (size before relaxing)
- .comment       0x00000030       0x31 LCD_main.o
+ .comment       0x00000030       0x31 EXTI_main.o
+ .comment       0x00000030       0x31 EXTI_program.o
+ .comment       0x00000030       0x31 GIE_program.o
 
 .note.gnu.avr.deviceinfo
                 0x00000000       0x3c
@@ -402,50 +421,68 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000       0x68
+.debug_aranges  0x00000000       0xd8
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x48 DIO_program.o
  .debug_aranges
-                0x00000048       0x20 LCD_main.o
+                0x00000048       0x28 EXTI_main.o
+ .debug_aranges
+                0x00000070       0x40 EXTI_program.o
+ .debug_aranges
+                0x000000b0       0x28 GIE_program.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0x7ef
+.debug_info     0x00000000      0xb94
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_info    0x000004e6      0x1e1 DIO_program.o
- .debug_info    0x000006c7      0x128 LCD_main.o
+ .debug_info    0x000006c7      0x32b EXTI_main.o
+ .debug_info    0x000009f2      0x10a EXTI_program.o
+ .debug_info    0x00000afc       0x98 GIE_program.o
 
-.debug_abbrev   0x00000000      0x5da
+.debug_abbrev   0x00000000      0x791
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x4a3 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_abbrev  0x000004a3       0xb6 DIO_program.o
- .debug_abbrev  0x00000559       0x81 LCD_main.o
+ .debug_abbrev  0x00000559      0x136 EXTI_main.o
+ .debug_abbrev  0x0000068f       0xb1 EXTI_program.o
+ .debug_abbrev  0x00000740       0x51 GIE_program.o
 
-.debug_line     0x00000000      0x3ad
+.debug_line     0x00000000      0x622
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x116 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_line    0x00000116      0x22f DIO_program.o
- .debug_line    0x00000345       0x68 LCD_main.o
+ .debug_line    0x00000345      0x1ba EXTI_main.o
+ .debug_line    0x000004ff       0xba EXTI_program.o
+ .debug_line    0x000005b9       0x69 GIE_program.o
 
-.debug_frame    0x00000000       0x98
+.debug_frame    0x00000000      0x188
  *(.debug_frame)
  .debug_frame   0x00000000       0x74 DIO_program.o
- .debug_frame   0x00000074       0x24 LCD_main.o
+ .debug_frame   0x00000074       0x34 EXTI_main.o
+ .debug_frame   0x000000a8       0xac EXTI_program.o
+ .debug_frame   0x00000154       0x34 GIE_program.o
 
-.debug_str      0x00000000      0x41d
+.debug_str      0x00000000      0x4dc
  *(.debug_str)
  .debug_str     0x00000000      0x196 E:/Programs/MicroChip/Main/7.0/Packs/atmel/ATmega_DFP/1.6.364/gcc/dev/atmega32/avr5/crtatmega32.o
- .debug_str     0x00000196      0x1e7 DIO_program.o
-                                0x210 (size before relaxing)
- .debug_str     0x0000037d       0xa0 LCD_main.o
-                                0x1e3 (size before relaxing)
+ .debug_str     0x00000196      0x20e DIO_program.o
+                                0x237 (size before relaxing)
+ .debug_str     0x000003a4       0xcd EXTI_main.o
+                                0x282 (size before relaxing)
+ .debug_str     0x00000471       0x48 EXTI_program.o
+                                0x1ec (size before relaxing)
+ .debug_str     0x000004b9       0x23 GIE_program.o
+                                0x1a0 (size before relaxing)
 
-.debug_loc      0x00000000      0x3f0
+.debug_loc      0x00000000      0x593
  *(.debug_loc)
  .debug_loc     0x00000000      0x3f0 DIO_program.o
+ .debug_loc     0x000003f0       0xd8 EXTI_main.o
+ .debug_loc     0x000004c8       0xcb EXTI_program.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -465,12 +502,14 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x00000000       0x48
+.debug_ranges   0x00000000       0x98
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x38 DIO_program.o
- .debug_ranges  0x00000038       0x10 LCD_main.o
+ .debug_ranges  0x00000038       0x18 EXTI_main.o
+ .debug_ranges  0x00000050       0x30 EXTI_program.o
+ .debug_ranges  0x00000080       0x18 GIE_program.o
 
 .debug_macro
  *(.debug_macro)
-OUTPUT(LCD_Test.elf elf32-avr)
+OUTPUT(EXTI_Interrupt.elf elf32-avr)
 LOAD linker stubs
